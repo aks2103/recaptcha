@@ -66,16 +66,13 @@ function LoginPage() {
           </button>
         </form>
         <GoogleLogin
-          clientId={clientId}
-          onSuccess={onSuccess}
-          onFailure={onFailure}
-          cookiePolicy={'single_host_origin'}
-          render={renderProps => (
-            <button onClick={renderProps.onClick} disabled={renderProps.disabled} style={buttonStyle}>
-              Continue with Google
-            </button>
-          )}
-        />
+        clientId={clientId}
+        buttonText="Sign in with Google"
+        onSuccess={onSuccess}
+        onFailure={onFailure}
+        cookiePolicy={'single_host_origin'}
+        style={{ width: '240px', height: '150px', fontSize: '16px' }}
+      />
       </div>
     </div>
   );
@@ -99,7 +96,8 @@ const buttonStyle = {
   borderRadius: '4px',
   border: 'none',
   cursor: 'pointer',
-  marginBottom: '10px'
+  marginBottom: '10px',
+  background: 'pink'
 };
 
 export default LoginPage;
